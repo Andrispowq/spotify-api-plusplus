@@ -397,3 +397,110 @@ bool SpotifyAPI::CheckUserFollowingPlaylist(std::string userId, std::string play
     return SpotifyGET("/v1/users/" + userId + "/playlists/" + playlistId + "/followers/contains", options, authToken)[0];
 }
 
+std::vector<std::shared_ptr<Device>> SpotifyAPI::GetMyDevices(options_t options)
+{
+    std::vector<std::shared_ptr<Device>> devices;
+    nlohmann::json ret = SpotifyGET("/v1/me/player/devices", options, authToken);
+
+    std::vector<nlohmann::json> devs = ret["devices"];
+
+    size_t deviceCount = devs.size();
+    for (size_t i = 0; i < deviceCount; i++)
+    {
+        std::shared_ptr<Device> curr_dev = std::make_shared<Device>(devs[i]);
+        devices.push_back(curr_dev);
+    }
+
+    return devices;
+}
+
+void SpotifyAPI::TransferMyPlayback(std::string deviceId, bool play, options_t options)
+{
+    std::string body;
+    if (play)
+    {
+        body = R"({
+        "device_ids": [")" + deviceId + R"("],
+        "play": true
+})";
+    }
+    else
+    {
+        body = R"({
+        "device_ids": [")" + deviceId + R"("],
+        "play": false
+})";
+    }
+
+    currentDevice = deviceId;
+
+    SpotifyPUT("/v1/me/player", options, authToken, body);
+}
+
+void SpotifyAPI::Resume(options_t options)
+{
+    if (currentDevice == "")
+    {
+        auto devs = GetMyDevices();
+        if (devs.size() == 0)
+        {
+            throw "No devices present!";
+        }
+        else
+        {
+            currentDevice = devs[0]->GetId();
+        }
+    }
+
+    TransferMyPlayback(currentDevice, true);
+}
+
+void SpotifyAPI::Pause(options_t options)
+{
+    if (currentDevice == "")
+    {
+        auto devs = GetMyDevices();
+        if (devs.size() == 0)
+        {
+            throw "No devices present!";
+        }
+        else
+        {
+            currentDevice = devs[0]->GetId();
+        }
+    }
+
+    TransferMyPlayback(currentDevice, false);
+
+    //SpotifyPUT("/v1/me/player/pause?device_id=" + currentDevice, options, authToken);
+}
+
+void SpotifyAPI::PlayTrack(std::string trackId, int track, options_t options)
+{
+    std::string position = std::to_string(track);
+
+    nlohmann::json offsetJson;
+    offsetJson["position"] = track;
+
+    nlohmann::json bodyJson;
+    bodyJson["context_uri"] = "spotify:" + trackId;
+    bodyJson["offset"] = offsetJson;
+    bodyJson["position_ms"] = 0;
+
+    SpotifyPUT("/v1/me/player/play?device_id=" + currentDevice, options, authToken, bodyJson.dump(4));
+}
+
+void SpotifyAPI::QueueTrack(std::string trackId, options_t options)
+{
+    SpotifyPOST("/v1/me/player/queue?uri=spotify%3Atrack%3A" + trackId + "&device_id=" + currentDevice, options, authToken, "");
+}
+
+void SpotifyAPI::SkipToNext(options_t options)
+{
+    SpotifyPOST("/v1/me/player/next?device_id=" + currentDevice, options, authToken, "");
+}
+
+void SpotifyAPI::SkipToPrevious(options_t options)
+{
+    SpotifyPOST("/v1/me/player/previous?device_id=" + currentDevice, options, authToken, "");
+}

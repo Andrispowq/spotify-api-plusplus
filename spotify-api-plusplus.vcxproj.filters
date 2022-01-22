@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="models">
+      <UniqueIdentifier>{2983320E-1525-5DE4-FEDF-7038EA20E434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{169C8510-82B0-ADC1-4B32-5121B705AAF2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SpotifyAPI.h" />
+    <ClInclude Include="src\models\Album.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\AlbumSimple.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Artist.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\ArtistSimple.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\AudioFeatures.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Category.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Context.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Copyright.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\CurrentlyPlayingContext.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\CurrentlyPlayingTrack.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Cursor.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\CursorPager.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Device.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Error.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Followers.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Image.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Pager.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\PlayHistoryObject.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Playlist.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\PlaylistSimple.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\PlaylistTrack.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Recommendations.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\RecommendationsSeed.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\SavedAlbum.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\SavedTrack.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\Track.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\TrackLink.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\TrackSimple.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\User.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\models\UserPublic.h">
+      <Filter>models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\CurlException.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\CurlUtils.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\SpotifyException.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\json.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SpotifyAPI.cpp" />
+    <ClCompile Include="src\models\Album.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\AlbumSimple.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Artist.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\ArtistSimple.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\AudioFeatures.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Category.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Context.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Copyright.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\CurrentlyPlayingContext.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\CurrentlyPlayingTrack.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Cursor.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Device.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Error.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Followers.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Image.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\PlayHistoryObject.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Playlist.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\PlaylistSimple.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\PlaylistTrack.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Recommendations.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\RecommendationsSeed.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\SavedAlbum.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\SavedTrack.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\Track.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\TrackLink.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\TrackSimple.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\User.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\models\UserPublic.cpp">
+      <Filter>models</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

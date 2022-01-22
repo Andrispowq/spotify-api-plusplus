@@ -146,14 +146,15 @@ public:
 
     std::shared_ptr<CurrentlyPlayingTrack> GetMyCurrentPlayingTrack(options_t options = options_t());
 
-    void TransferMyPlayback(std::string deviceId, options_t options = options_t());
+    void TransferMyPlayback(std::string deviceId, bool play = false, options_t options = options_t());
 
     void Resume(options_t options = options_t());
-
     void Pause(options_t options = options_t());
 
-    void SkipToNext(options_t options = options_t());
+    void PlayTrack(std::string trackId, int track, options_t options = options_t());
+    void QueueTrack(std::string trackId, options_t options = options_t());
 
+    void SkipToNext(options_t options = options_t());
     void SkipToPrevious(options_t options = options_t());
 
     void SetRepeat(std::string state, options_t options = options_t());
@@ -164,6 +165,8 @@ public:
 
 private:
     std::string authToken;
+
+    std::string currentDevice = "";
 };
 
 

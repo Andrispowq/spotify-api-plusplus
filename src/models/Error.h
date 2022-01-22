@@ -4,6 +4,10 @@
 #include <string>
 #include "../utils/json.h"
 
+#ifdef GetMessage
+#undef GetMessage
+#endif
+
 class Error
 {
 public:

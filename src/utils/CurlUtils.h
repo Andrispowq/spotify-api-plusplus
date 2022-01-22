@@ -35,7 +35,7 @@ nlohmann::json SpotifyCurlInternal(std::string request, std::string endpoint, st
         return curl;
     }
 
-    std::string url = "https://api.spotify.com" + endpoint;
+    std::string url = (authToken.empty() ? "" : "https://api.spotify.com") + endpoint;
     if(!options.empty())
     {
         url += "?";
@@ -57,20 +57,25 @@ nlohmann::json SpotifyCurlInternal(std::string request, std::string endpoint, st
     if(!authToken.empty())
     {
         std::string header = "Authorization: Bearer " + authToken;
-        struct curl_slist *headers = NULL;
+        struct curl_slist* headers = NULL;
         headers = curl_slist_append(headers, header.c_str());
+
+        if(request == "POST") headers = curl_slist_append(headers, "Content-length: 0");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
     }
+
     if(!body.empty())
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, body.c_str());
-
+    
     int rc = curl_easy_perform(curl);
     if (rc != CURLE_OK)
         throw CurlException(rc);
 
     long statusCode = 0;
     curl_easy_getinfo (curl, CURLINFO_RESPONSE_CODE, &statusCode);
-    if(statusCode < 200 || statusCode > 204)
+    if (statusCode == 411)
+        std::cout << readBuffer << '\n';
+    else if(statusCode < 200 || statusCode > 204)
         throw SpotifyException(Error(nlohmann::json::parse(readBuffer)["error"]));
 
     curl_easy_cleanup(curl);

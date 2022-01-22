@@ -8,12 +8,12 @@ class Device
 public:
     Device(nlohmann::json deviceJson);
 
-    std::string GetId() const;
-    bool IsActive() const;
-    bool IsRestricted() const;
-    std::string GetName() const;
-    std::string GetType() const;
-    int GetVolumePercent() const;
+    std::string GetId() const { return id; }
+    bool IsActive() const { return isActive; }
+    bool IsRestricted() const { return isRestricted; }
+    std::string GetName() const { return name; }
+    std::string GetType() const { return type; }
+    int GetVolumePercent() const { return volumePercent; }
 
 private:
     std::string id;

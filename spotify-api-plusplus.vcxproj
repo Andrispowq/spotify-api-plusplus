@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|x64">
+      <Configuration>Distribution</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EF1B3F7D-DBAA-C846-84C9-DC417037D9EC}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>spotify-api-plusplus</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\Debug-windows-x86_64\spotify-api-plusplus\</OutDir>
+    <IntDir>bin-int\Debug-windows-x86_64\spotify-api-plusplus\</IntDir>
+    <TargetName>spotify-api-plusplus</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\Release-windows-x86_64\spotify-api-plusplus\</OutDir>
+    <IntDir>bin-int\Release-windows-x86_64\spotify-api-plusplus\</IntDir>
+    <TargetName>spotify-api-plusplus</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <OutDir>bin\Distribution-windows-x86_64\spotify-api-plusplus\</OutDir>
+    <IntDir>bin-int\Distribution-windows-x86_64\spotify-api-plusplus\</IntDir>
+    <TargetName>spotify-api-plusplus</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Dependencies\curl\include;src;src\models;src\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Dependencies\curl\include;src;src\models;src\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Dependencies\curl\include;src;src\models;src\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SpotifyAPI.h" />
+    <ClInclude Include="src\models\Album.h" />
+    <ClInclude Include="src\models\AlbumSimple.h" />
+    <ClInclude Include="src\models\Artist.h" />
+    <ClInclude Include="src\models\ArtistSimple.h" />
+    <ClInclude Include="src\models\AudioFeatures.h" />
+    <ClInclude Include="src\models\Category.h" />
+    <ClInclude Include="src\models\Context.h" />
+    <ClInclude Include="src\models\Copyright.h" />
+    <ClInclude Include="src\models\CurrentlyPlayingContext.h" />
+    <ClInclude Include="src\models\CurrentlyPlayingTrack.h" />
+    <ClInclude Include="src\models\Cursor.h" />
+    <ClInclude Include="src\models\CursorPager.h" />
+    <ClInclude Include="src\models\Device.h" />
+    <ClInclude Include="src\models\Error.h" />
+    <ClInclude Include="src\models\Followers.h" />
+    <ClInclude Include="src\models\Image.h" />
+    <ClInclude Include="src\models\Pager.h" />
+    <ClInclude Include="src\models\PlayHistoryObject.h" />
+    <ClInclude Include="src\models\Playlist.h" />
+    <ClInclude Include="src\models\PlaylistSimple.h" />
+    <ClInclude Include="src\models\PlaylistTrack.h" />
+    <ClInclude Include="src\models\Recommendations.h" />
+    <ClInclude Include="src\models\RecommendationsSeed.h" />
+    <ClInclude Include="src\models\SavedAlbum.h" />
+    <ClInclude Include="src\models\SavedTrack.h" />
+    <ClInclude Include="src\models\Track.h" />
+    <ClInclude Include="src\models\TrackLink.h" />
+    <ClInclude Include="src\models\TrackSimple.h" />
+    <ClInclude Include="src\models\User.h" />
+    <ClInclude Include="src\models\UserPublic.h" />
+    <ClInclude Include="src\utils\CurlException.h" />
+    <ClInclude Include="src\utils\CurlUtils.h" />
+    <ClInclude Include="src\utils\SpotifyException.h" />
+    <ClInclude Include="src\utils\json.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SpotifyAPI.cpp" />
+    <ClCompile Include="src\models\Album.cpp" />
+    <ClCompile Include="src\models\AlbumSimple.cpp" />
+    <ClCompile Include="src\models\Artist.cpp" />
+    <ClCompile Include="src\models\ArtistSimple.cpp" />
+    <ClCompile Include="src\models\AudioFeatures.cpp" />
+    <ClCompile Include="src\models\Category.cpp" />
+    <ClCompile Include="src\models\Context.cpp" />
+    <ClCompile Include="src\models\Copyright.cpp" />
+    <ClCompile Include="src\models\CurrentlyPlayingContext.cpp" />
+    <ClCompile Include="src\models\CurrentlyPlayingTrack.cpp" />
+    <ClCompile Include="src\models\Cursor.cpp" />
+    <ClCompile Include="src\models\Device.cpp" />
+    <ClCompile Include="src\models\Error.cpp" />
+    <ClCompile Include="src\models\Followers.cpp" />
+    <ClCompile Include="src\models\Image.cpp" />
+    <ClCompile Include="src\models\PlayHistoryObject.cpp" />
+    <ClCompile Include="src\models\Playlist.cpp" />
+    <ClCompile Include="src\models\PlaylistSimple.cpp" />
+    <ClCompile Include="src\models\PlaylistTrack.cpp" />
+    <ClCompile Include="src\models\Recommendations.cpp" />
+    <ClCompile Include="src\models\RecommendationsSeed.cpp" />
+    <ClCompile Include="src\models\SavedAlbum.cpp" />
+    <ClCompile Include="src\models\SavedTrack.cpp" />
+    <ClCompile Include="src\models\Track.cpp" />
+    <ClCompile Include="src\models\TrackLink.cpp" />
+    <ClCompile Include="src\models\TrackSimple.cpp" />
+    <ClCompile Include="src\models\User.cpp" />
+    <ClCompile Include="src\models\UserPublic.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
