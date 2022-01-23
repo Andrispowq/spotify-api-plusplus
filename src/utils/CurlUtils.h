@@ -35,7 +35,12 @@ nlohmann::json SpotifyCurlInternal(std::string request, std::string endpoint, st
         return curl;
     }
 
-    std::string url = (authToken.empty() ? "" : "https://api.spotify.com") + endpoint;
+    std::string url;
+    if (endpoint.substr(0, 5) != "https")
+    {
+        url = "https://api.spotify.com";
+    }
+    url += endpoint;
     if(!options.empty())
     {
         url += "?";

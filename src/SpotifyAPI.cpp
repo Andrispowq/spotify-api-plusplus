@@ -471,11 +471,9 @@ void SpotifyAPI::Pause(options_t options)
     }
 
     TransferMyPlayback(currentDevice, false);
-
-    //SpotifyPUT("/v1/me/player/pause?device_id=" + currentDevice, options, authToken);
 }
 
-void SpotifyAPI::PlayTrack(std::string trackId, int track, options_t options)
+void SpotifyAPI::PlayTrack(std::string trackId, int track, int offsetSeconds, options_t options)
 {
     std::string position = std::to_string(track);
 
@@ -485,7 +483,7 @@ void SpotifyAPI::PlayTrack(std::string trackId, int track, options_t options)
     nlohmann::json bodyJson;
     bodyJson["context_uri"] = "spotify:" + trackId;
     bodyJson["offset"] = offsetJson;
-    bodyJson["position_ms"] = 0;
+    bodyJson["position_ms"] = offsetSeconds * 1000;
 
     SpotifyPUT("/v1/me/player/play?device_id=" + currentDevice, options, authToken, bodyJson.dump(4));
 }
@@ -503,4 +501,19 @@ void SpotifyAPI::SkipToNext(options_t options)
 void SpotifyAPI::SkipToPrevious(options_t options)
 {
     SpotifyPOST("/v1/me/player/previous?device_id=" + currentDevice, options, authToken, "");
+}
+
+void SpotifyAPI::SetRepeat(std::string state, options_t options)
+{
+    SpotifyPUT("/v1/me/player/repeat?state=" + state + "&device_id=" + currentDevice, options, authToken, "");
+}
+
+void SpotifyAPI::SetVolume(int volumePercent, options_t options)
+{
+    SpotifyPUT("/v1/me/player/volume?volume_percent=" + std::to_string(volumePercent) + "&device_id=" + currentDevice, options, authToken, "");
+}
+
+void SpotifyAPI::ToggleShuffle(bool state, options_t options)
+{
+    SpotifyPUT("/v1/me/player/shuffle?state=" + std::string(state ? "true" : "false") + "&device_id=" + currentDevice, options, authToken, "");
 }
