@@ -26,19 +26,19 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -127,72 +127,72 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\SpotifyAPI.h" />
-    <ClInclude Include="src\models\Album.h" />
-    <ClInclude Include="src\models\AlbumSimple.h" />
-    <ClInclude Include="src\models\Artist.h" />
-    <ClInclude Include="src\models\ArtistSimple.h" />
-    <ClInclude Include="src\models\AudioFeatures.h" />
-    <ClInclude Include="src\models\Category.h" />
-    <ClInclude Include="src\models\Context.h" />
-    <ClInclude Include="src\models\Copyright.h" />
-    <ClInclude Include="src\models\CurrentlyPlayingContext.h" />
-    <ClInclude Include="src\models\CurrentlyPlayingTrack.h" />
-    <ClInclude Include="src\models\Cursor.h" />
-    <ClInclude Include="src\models\CursorPager.h" />
-    <ClInclude Include="src\models\Device.h" />
-    <ClInclude Include="src\models\Error.h" />
-    <ClInclude Include="src\models\Followers.h" />
-    <ClInclude Include="src\models\Image.h" />
-    <ClInclude Include="src\models\Pager.h" />
-    <ClInclude Include="src\models\PlayHistoryObject.h" />
-    <ClInclude Include="src\models\Playlist.h" />
-    <ClInclude Include="src\models\PlaylistSimple.h" />
-    <ClInclude Include="src\models\PlaylistTrack.h" />
-    <ClInclude Include="src\models\Recommendations.h" />
-    <ClInclude Include="src\models\RecommendationsSeed.h" />
-    <ClInclude Include="src\models\SavedAlbum.h" />
-    <ClInclude Include="src\models\SavedTrack.h" />
-    <ClInclude Include="src\models\Track.h" />
-    <ClInclude Include="src\models\TrackLink.h" />
-    <ClInclude Include="src\models\TrackSimple.h" />
-    <ClInclude Include="src\models\User.h" />
-    <ClInclude Include="src\models\UserPublic.h" />
-    <ClInclude Include="src\utils\CurlException.h" />
-    <ClInclude Include="src\utils\CurlUtils.h" />
-    <ClInclude Include="src\utils\SpotifyException.h" />
-    <ClInclude Include="src\utils\json.h" />
+    <ClInclude Include="SpotifyAPI.h" />
+    <ClInclude Include="models\Album.h" />
+    <ClInclude Include="models\AlbumSimple.h" />
+    <ClInclude Include="models\Artist.h" />
+    <ClInclude Include="models\ArtistSimple.h" />
+    <ClInclude Include="models\AudioFeatures.h" />
+    <ClInclude Include="models\Category.h" />
+    <ClInclude Include="models\Context.h" />
+    <ClInclude Include="models\Copyright.h" />
+    <ClInclude Include="models\CurrentlyPlayingContext.h" />
+    <ClInclude Include="models\CurrentlyPlayingTrack.h" />
+    <ClInclude Include="models\Cursor.h" />
+    <ClInclude Include="models\CursorPager.h" />
+    <ClInclude Include="models\Device.h" />
+    <ClInclude Include="models\Error.h" />
+    <ClInclude Include="models\Followers.h" />
+    <ClInclude Include="models\Image.h" />
+    <ClInclude Include="models\Pager.h" />
+    <ClInclude Include="models\PlayHistoryObject.h" />
+    <ClInclude Include="models\Playlist.h" />
+    <ClInclude Include="models\PlaylistSimple.h" />
+    <ClInclude Include="models\PlaylistTrack.h" />
+    <ClInclude Include="models\Recommendations.h" />
+    <ClInclude Include="models\RecommendationsSeed.h" />
+    <ClInclude Include="models\SavedAlbum.h" />
+    <ClInclude Include="models\SavedTrack.h" />
+    <ClInclude Include="models\Track.h" />
+    <ClInclude Include="models\TrackLink.h" />
+    <ClInclude Include="models\TrackSimple.h" />
+    <ClInclude Include="models\User.h" />
+    <ClInclude Include="models\UserPublic.h" />
+    <ClInclude Include="utils\CurlException.h" />
+    <ClInclude Include="utils\CurlUtils.h" />
+    <ClInclude Include="utils\SpotifyException.h" />
+    <ClInclude Include="utils\json.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\SpotifyAPI.cpp" />
-    <ClCompile Include="src\models\Album.cpp" />
-    <ClCompile Include="src\models\AlbumSimple.cpp" />
-    <ClCompile Include="src\models\Artist.cpp" />
-    <ClCompile Include="src\models\ArtistSimple.cpp" />
-    <ClCompile Include="src\models\AudioFeatures.cpp" />
-    <ClCompile Include="src\models\Category.cpp" />
-    <ClCompile Include="src\models\Context.cpp" />
-    <ClCompile Include="src\models\Copyright.cpp" />
-    <ClCompile Include="src\models\CurrentlyPlayingContext.cpp" />
-    <ClCompile Include="src\models\CurrentlyPlayingTrack.cpp" />
-    <ClCompile Include="src\models\Cursor.cpp" />
-    <ClCompile Include="src\models\Device.cpp" />
-    <ClCompile Include="src\models\Error.cpp" />
-    <ClCompile Include="src\models\Followers.cpp" />
-    <ClCompile Include="src\models\Image.cpp" />
-    <ClCompile Include="src\models\PlayHistoryObject.cpp" />
-    <ClCompile Include="src\models\Playlist.cpp" />
-    <ClCompile Include="src\models\PlaylistSimple.cpp" />
-    <ClCompile Include="src\models\PlaylistTrack.cpp" />
-    <ClCompile Include="src\models\Recommendations.cpp" />
-    <ClCompile Include="src\models\RecommendationsSeed.cpp" />
-    <ClCompile Include="src\models\SavedAlbum.cpp" />
-    <ClCompile Include="src\models\SavedTrack.cpp" />
-    <ClCompile Include="src\models\Track.cpp" />
-    <ClCompile Include="src\models\TrackLink.cpp" />
-    <ClCompile Include="src\models\TrackSimple.cpp" />
-    <ClCompile Include="src\models\User.cpp" />
-    <ClCompile Include="src\models\UserPublic.cpp" />
+    <ClCompile Include="SpotifyAPI.cpp" />
+    <ClCompile Include="models\Album.cpp" />
+    <ClCompile Include="models\AlbumSimple.cpp" />
+    <ClCompile Include="models\Artist.cpp" />
+    <ClCompile Include="models\ArtistSimple.cpp" />
+    <ClCompile Include="models\AudioFeatures.cpp" />
+    <ClCompile Include="models\Category.cpp" />
+    <ClCompile Include="models\Context.cpp" />
+    <ClCompile Include="models\Copyright.cpp" />
+    <ClCompile Include="models\CurrentlyPlayingContext.cpp" />
+    <ClCompile Include="models\CurrentlyPlayingTrack.cpp" />
+    <ClCompile Include="models\Cursor.cpp" />
+    <ClCompile Include="models\Device.cpp" />
+    <ClCompile Include="models\Error.cpp" />
+    <ClCompile Include="models\Followers.cpp" />
+    <ClCompile Include="models\Image.cpp" />
+    <ClCompile Include="models\PlayHistoryObject.cpp" />
+    <ClCompile Include="models\Playlist.cpp" />
+    <ClCompile Include="models\PlaylistSimple.cpp" />
+    <ClCompile Include="models\PlaylistTrack.cpp" />
+    <ClCompile Include="models\Recommendations.cpp" />
+    <ClCompile Include="models\RecommendationsSeed.cpp" />
+    <ClCompile Include="models\SavedAlbum.cpp" />
+    <ClCompile Include="models\SavedTrack.cpp" />
+    <ClCompile Include="models\Track.cpp" />
+    <ClCompile Include="models\TrackLink.cpp" />
+    <ClCompile Include="models\TrackSimple.cpp" />
+    <ClCompile Include="models\User.cpp" />
+    <ClCompile Include="models\UserPublic.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
